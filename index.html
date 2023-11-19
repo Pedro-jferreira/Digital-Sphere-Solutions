@@ -4,13 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>agencia fake</title>
+
+    <link rel="stylesheet" href="/css/style.css">
   </head>
 
   <body>
-    
+        <div class="body1">
+      <span class="load"></span>
+    </div>
+    <div style="display: none;" id="contentBody2">
+
     <nav id="nav">
       <script>
-        fetch("/componets/menu/menu.html")
+        fetch("/componets/nav/nav.html")
           .then((response) => response.text())
           .then((data) => {
             document.getElementById("nav").innerHTML = data;
@@ -28,76 +34,25 @@
       </script>
     </header>
 
-  <section id="section" name="link-servicos" style="align-items: center;">
+    <section id="section" style="align-items: center">
       <script>
         fetch("/componets/section/section.html")
           .then((response) => response.text())
           .then((data) => {
             document.getElementById("section").innerHTML = data;
-
-            // Chama a função para trocar os textos a cada 3 segundos após carregar o componente section
             trocarTexto();
           });
       </script>
     </section>
-    
-    <footer id="footer">
+        <form id="form">
       <script>
-        fetch("/componets/footer/footer.html")
+        fetch("/componets/form/form.html")
           .then((response) => response.text())
           .then((data) => {
-            document.getElementById("footer").innerHTML = data;
+            document.getElementById("form").innerHTML = data;
           });
       </script>
-    </footer>
-    <script src="/componets/section/section.js"></script>
-    <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      /* Adicione um estilo de transição para um efeito suave */
-      #nav {
-        transition: transform 0.5s;
-      }
-    </style>
-    <title>agencia fake</title>
-  </head>
-
-  <body>
-    <nav id="nav">
-      <script>
-        fetch("/componets/menu/menu.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("nav").innerHTML = data;
-          });
-      </script>
-    </nav>
-
-    <header id="header">
-      <script>
-        fetch("/componets/header/header.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("header").innerHTML = data;
-          });
-      </script>
-    </header>
-
-    <section id="section" style="align-items: center;">
-      <script>
-        fetch("/componets/section/section.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("section").innerHTML = data;
-
-            // Chama a função para trocar os textos a cada 3 segundos após carregar o componente section
-            trocarTexto();
-          });
-      </script>
-    </section>
+        </form>
 
     <footer id="footer">
       <script>
@@ -107,38 +62,49 @@
             document.getElementById("footer").innerHTML = data;
           });
       </script>
-    </footer>
+    </footer></div>
+  <script src="/componets/section/section.js"></script>
+      <script>
+        function scrollToSection(sectionId) {
+          const targetSection = document.getElementById(sectionId);
 
-    <script src="/componets/section/section.js"></script>
+          if (targetSection) {
+            const sectionPosition = targetSection.offsetTop;
+            window.scrollTo({
+              top: sectionPosition,
+              behavior: 'smooth',
+            });
+          }
+        }
 
+        document
+          .getElementById('section')
+          .addEventListener('click', function (event) {
+            event.preventDefault();
+            scrollToSection('#section');
+          });
+      </script>
+    </div>
 
     <script>
-  // Função para rolar suavemente até a âncora desejada
-  function scrollToAnchor(anchor) {
-    const targetAnchor = document.querySelector(`a[name='${anchor}']`);
+      // Mostra o spinner de carregamento por 2 segundos
+      const loadingSpinner = document.querySelector('.body1');
 
-    if (targetAnchor) {
-      // Obtém a posição da âncora em relação ao topo da página
-      const anchorPosition = targetAnchor.offsetTop;
+      // Função para ocultar o spinner e mostrar o segundo conteúdo
+      function hideSpinnerAndShowContent() {
+        loadingSpinner.style.display = 'none';
+        document.getElementById('contentBody2').style.display = 'flex';
+        
+      }
 
-      // Rola suavemente até a posição da âncora
-      window.scrollTo({
-        top: anchorPosition,
-        behavior: "smooth"
+      // Evento para o evento 'load' da janela
+      window.addEventListener('load', () => {
+        // Oculta o spinner e mostra o segundo conteúdo após 2 segundos
+        setTimeout(hideSpinnerAndShowContent, 2000);
       });
-    }
-  }
 
-  // Adiciona um ouvinte de evento de clique ao link "serviços"
-  document.getElementById("servicos-link").addEventListener("click", function (event) {
-    // Impede o comportamento padrão do link (navegar para outra página)
-    event.preventDefault();
+      // Seu código fetch existente aqui...
 
-    // Chama a função para rolar suavemente até a âncora
-    scrollToAnchor("link-servicos");
-  });
-</script>
-
-
+    </script>
   </body>
 </html>
