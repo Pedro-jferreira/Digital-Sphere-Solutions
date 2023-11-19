@@ -35,13 +35,13 @@
     }
 
     .card {
-        width: 40%;
+        width: 100%;
         margin: 20px;
             padding: 20px;
     }
 
     .card:hover{
-  width: 60%;
+  width: 90%;
     }
     .whats {
         display: none;
