@@ -37,26 +37,30 @@
     .card {
         width: 100%;
         margin: 20px;
-            padding: 20px;
+        padding: 20px;
     }
 
-    .card:hover{
-  width: 90%;
+    .card:hover {
+        width: 90%;
     }
+
     .whats {
         display: none;
-        
+
     }
-    .section{
-                height: 100%;
+
+    .section {
+        height: 100%;
     }
-    .servicos{
-flex-flow: column wrap; 
-column-gap: 40px; }
+
+    .servicos {
+        flex-flow: column wrap;
+    }
 }
+
 @media screen and (max-width:1250px) {
-    .header{
+    .header {
         padding-top: 10%;
     }
-    
+
 }
