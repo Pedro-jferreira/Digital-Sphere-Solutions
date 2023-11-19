@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+
+.header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding-top: 5%;
+
+}
+
+.headline {
+
+    margin-left: 10%;
+    flex: 40%;
+}
+
+.img-headline {
+    margin-right: 10%;
+    flex: 40%;
+    text-align: center;
+}
+
+.img-headline img {
+    max-width: 100%;
+
+}
+
+.headline h2 {
+    font-weight: 900;
+    font-size: 20px;
+    color: #180F4A;
+    padding: 0;
+    margin: 0;
+}
+
+.headline p {
+    color: gray;
+    text-align: left;
+}
+
+.contact-btn {
+    display: inline-block;
+    background: #FF2978;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.contact-btn:hover {
+    background: #180F4A;
+
+}

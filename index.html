@@ -4,114 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>agencia fake</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/responsivo.css">
   </head>
+
   <body>
-    <nav class="navbar">
-      <div class="logo"><h1>Digital Sphere Solutions</h1></div>
-      <div class="menu">
-        <a href="#">home</a>
-        <a href="#">sobre nós</a>
-        <a href="#">serviços</a>
-        <a id="botton" href="#">fale conosco</a>
-      </div>
+    
+    <nav id="nav">
+      <script>
+        fetch("/componets/menu/menu.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("nav").innerHTML = data;
+          });
+      </script>
     </nav>
-    <header class="header">
-      <div class="headline">
-        <h2 style="letter-spacing: 15px">você achou a melhor</h2>
-        <h2 style="font-size: 80px">Agência Digital</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ut
-          tempora velit explicabo? Cumque quis at accusamus esse, tempora
-          explicabo nulla obcaecati! Libero sequi suscipit natus dignissimos
-          odio in reprehenderit.
-        </p>
-        <a href="#" class="contact-btn">Contrate agora</a>
-      </div>
-      <div class="img-headline">
-        <img  src="img/hero_right.png" alt="" />
-      </div>
+
+    <header id="header">
+      <script>
+        fetch("/componets/header/header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("header").innerHTML = data;
+          });
+      </script>
     </header>
-    <section>
-      <h2>O que podemos fazer pelo seu negócio?</h2>
-      <div class="servicos">
 
-        <div class="card">
-          <img src="img/pc.png" alt="" />
-          <div class="card-text">
-         <h3>Desenvolvimento de Sites</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-            ratione qui autem illum perspiciatis doloremque reiciendis, eos
-            accusamus ullam repellat est distinctio facere. Suscipit corrupti
-            ducimus omnis natus. Atque, veniam.
-          </p>
-        </div>
-        <div class="text-ocuto">
-         <h3>outro conteudo</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-            ratione qui autem illum perspiciatis doloremque reiciendis, eos
-            accusamus ullam repellat est distinctio facere. Suscipit corrupti
-            ducimus omnis natus. Atque, veniam.
-          </p>
-        </div>
-        </div>
+  <section id="section" style="align-items: center;">
+      <script>
+        fetch("/componets/section/section.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("section").innerHTML = data;
 
-        <div class="card">
-          <img src="img/smartphone.png" alt="" />
-          <div class="card-text">
-          <h3>Desenvolvimento de Apps</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-            ratione qui autem illum perspiciatis doloremque reiciendis, eos
-            accusamus ullam repellat est distinctio facere. Suscipit corrupti
-            ducimus omnis natus. Atque, veniam.
-          </p></div>
-                  <div class="text-ocuto">
-         <h3>outro conteudo</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-            ratione qui autem illum perspiciatis doloremque reiciendis, eos
-            accusamus ullam repellat est distinctio facere. Suscipit corrupti
-            ducimus omnis natus. Atque, veniam.
-          </p>
-        </div>
-        </div>
-
-        <div class="card">
-          <img src="img/marketing.png" alt="" />
-          <div class="card-text">
-         <h3>Marketing Digital</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-            ratione qui autem illum perspiciatis doloremque reiciendis, eos
-            accusamus ullam repellat est distinctio facere. Suscipit corrupti
-            ducimus omnis natus. Atque, veniam.
-          </p></div>
-                  <div class="text-ocuto">
-         <h3>outro conteudo</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-            ratione qui autem illum perspiciatis doloremque reiciendis, eos
-            accusamus ullam repellat est distinctio facere. Suscipit corrupti
-            ducimus omnis natus. Atque, veniam.
-          </p>
-        </div>
-        </div>
-
-      </div>
+            // Chama a função para trocar os textos a cada 3 segundos após carregar o componente section
+            trocarTexto();
+          });
+      </script>
     </section>
-     <footer>
-        <div class="logo-rodape">
-            <h1 class="agencia">Agência Fake</h1>
-            <p style="color:white">Um site feito com HTML e CSS Puro</p>
-        </div>
-        <b style="color:white;">© Todos os direitos reservados.</b>
+    
+    <footer id="footer">
+      <script>
+        fetch("/componets/footer/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer").innerHTML = data;
+          });
+      </script>
     </footer>
-    <a class="whats" target="_blank"
-        href="https://wa.me/5561985439393?text=ol%C3%A1+quero+fazer+um+or%C3%A7amento"><img
-            style="width: 100px;" src="img/whats.png"></a>
+    <script src="/componets/section/section.js"></script>
   </body>
 </html>
