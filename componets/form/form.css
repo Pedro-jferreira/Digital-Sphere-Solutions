@@ -75,3 +75,16 @@ input[type="submit"]:hover {
     background-color: #FF2978;
     color: white;
 }
+@media screen and (max-width:1005px) {
+    .form{
+        flex-direction: column;
+    
+    }
+    .content-form{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .content{
+        flex-direction: column;
+    }
+}
